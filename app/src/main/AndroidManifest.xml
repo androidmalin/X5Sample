@@ -26,20 +26,24 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-
+        <!--享受页面视频的完整播放体验需要做如下声明-->
+        <!--页面的Activity需要声明android:configChanges="orientation|screenSize|keyboardHidden"-->
         <activity
             android:name=".FullScreenActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <activity
             android:name=".FileChooserActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".BrowserActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <activity
             android:name=".MainActivity"

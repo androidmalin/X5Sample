@@ -21,6 +21,7 @@ public class FullScreenActivity extends Activity {
     private X5WebView mWebView;
     private static final String LOCAL_URL = "file:///android_asset/webpage/fullscreenVideo.html";
     private static final String REMOTE_URL = "https://v-cdn.zjol.com.cn/276984.mp4";
+    private static final String REMOTE_URL2 = "https://3g.163.com/news/article/FCGL5PTP000189FH.html?clickfrom=channel2018_news_newsList#offset=0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class FullScreenActivity extends Activity {
     }
 
     private void initDefault() {
-        enableX5FullscreenFunc();
+        enablePageVideoFunc();
     }
 
     private void initWindow() {
@@ -47,7 +48,7 @@ public class FullScreenActivity extends Activity {
     }
 
     private void initData() {
-        mWebView.loadUrl(LOCAL_URL);
+        mWebView.loadUrl(REMOTE_URL2);
     }
 
     private void initListener() {
@@ -84,9 +85,9 @@ public class FullScreenActivity extends Activity {
         try {
             super.onConfigurationChanged(newConfig);
             if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-
+                Toast.makeText(this, "横屏", Toast.LENGTH_SHORT).show();
             } else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-
+                Toast.makeText(this, "竖屏", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
