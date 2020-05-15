@@ -4,18 +4,12 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_height="match_parent"
+        android:id="@+id/frame_web_video"
         android:layout_width="match_parent"
-        android:id="@+id/frame_web_video"></FrameLayout>
-
+        android:layout_height="match_parent" />
 
     <com.example.test_webview_demo.utils.X5WebView
+        android:id="@+id/web_filechooser"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/web_filechooser">
-
-
-    </com.example.test_webview_demo.utils.X5WebView>
-
-
+        android:layout_height="match_parent" />
 </RelativeLayout>
