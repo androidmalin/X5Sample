@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
@@ -22,11 +23,12 @@ public class FullScreenActivity extends Activity {
     private static final String LOCAL_URL = "file:///android_asset/webpage/fullscreenVideo.html";
     private static final String REMOTE_URL = "https://v-cdn.zjol.com.cn/276984.mp4";
     private static final String REMOTE_URL2 = "https://3g.163.com/news/article/FCGL5PTP000189FH.html?clickfrom=channel2018_news_newsList#offset=0";
+    private static final String TAG = FullScreenActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.filechooser_layout);
+        setContentView(R.layout.common_webview_layout);
         initWindow();
         initView();
         initData();
@@ -43,7 +45,7 @@ public class FullScreenActivity extends Activity {
     }
 
     private void initView() {
-        mWebView = findViewById(R.id.web_filechooser);
+        mWebView = findViewById(R.id.wv_common);
         mWebView.getView().setOverScrollMode(View.OVER_SCROLL_ALWAYS);
     }
 
@@ -56,6 +58,7 @@ public class FullScreenActivity extends Activity {
 
             @Override
             public void onJsFunctionCalled(String tag) {
+                Log.d(TAG, "onJsFunctionCalled:" + tag);
             }
 
             @JavascriptInterface
@@ -82,17 +85,12 @@ public class FullScreenActivity extends Activity {
 
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
-        try {
-            super.onConfigurationChanged(newConfig);
-            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                Toast.makeText(this, "横屏", Toast.LENGTH_SHORT).show();
-            } else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                Toast.makeText(this, "竖屏", Toast.LENGTH_SHORT).show();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        super.onConfigurationChanged(newConfig);
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(this, "横屏", Toast.LENGTH_SHORT).show();
+        } else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast.makeText(this, "竖屏", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     /**

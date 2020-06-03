@@ -7,7 +7,9 @@ android {
     defaultConfig {
         applicationId "com.example.test_webview_demo"
         minSdkVersion 16
-        targetSdkVersion 22
+        // targetSdkVersion 29加载x5失败
+        //noinspection OldTargetApi
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         ndk {
@@ -31,5 +33,4 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    //api 'com.tencent.tbs.tbssdk:sdk:43903'
 }

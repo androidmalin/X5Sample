@@ -57,7 +57,7 @@ public class BrowserActivity extends Activity {
     private Button mGo;
     private EditText mUrl;
 
-    private static final String mHomeUrl = "http://app.html5.qq.com/navi/index";
+    private static final String mHomeUrl = "http://debugtbs.qq.com";
     private static final String TAG = "SdkDemo";
     private static final int MAX_LENGTH = 14;
     private boolean mNeedTestPage = false;
@@ -165,7 +165,7 @@ public class BrowserActivity extends Activity {
              */
             @Override
             public void onShowCustomView(View view, CustomViewCallback customViewCallback) {
-                FrameLayout normalView = findViewById(R.id.web_filechooser);
+                FrameLayout normalView = findViewById(R.id.wv_common);
                 ViewGroup viewGroup = (ViewGroup) normalView.getParent();
                 viewGroup.removeView(normalView);
                 viewGroup.addView(view);

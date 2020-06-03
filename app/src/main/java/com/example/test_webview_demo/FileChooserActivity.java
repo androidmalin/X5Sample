@@ -23,7 +23,7 @@ public class FileChooserActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.filechooser_layout);
+        setContentView(R.layout.common_webview_layout);
         initView();
         initData();
         initListener();
@@ -34,7 +34,7 @@ public class FileChooserActivity extends Activity {
     }
 
     private void initView() {
-        mWebView = findViewById(R.id.web_filechooser);
+        mWebView = findViewById(R.id.wv_common);
     }
 
     private void initListener() {

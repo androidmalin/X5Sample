@@ -53,7 +53,6 @@ public class MainActivity extends Activity {
 
         //4.setAdapter
         gridView.setAdapter(simpleAdapter);
-        simpleAdapter.notifyDataSetChanged();
 
         //5.listener
         gridView.setOnItemClickListener(new OnItemClickListener() {
